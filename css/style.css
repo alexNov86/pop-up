@@ -46,8 +46,7 @@ p {
   background-color: #000;
   margin: 0px 0px 50px 0px;
 }
-.lock-padding {
-}
+
 .header__container {
   display: flex;
   height: 80px;
@@ -64,13 +63,11 @@ p {
 .header__phone {
   color: #fff;
 }
-.popup-link {
-}
+
 .content {
   padding: 130px 0px 0px 0px;
 }
-.content__container {
-}
+
 .content__section {
   margin: 0px 0px 50px 0px;
 }
@@ -90,8 +87,7 @@ p {
   font-size: 40px;
   margin: 0px 0px 0.5em 0px;
 }
-.content__text {
-}
+
 .content__image {
   display: block;
   padding: 0px 20px;
@@ -122,10 +118,31 @@ p {
   -o-transition: opacity 0.8s ease 0s;
 }
 
-.popup:target {
+.popup.open {
   opacity: 1;
   visibility: visible;
 }
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -moz-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -ms-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -webkit-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -o-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  opacity: 1;
+}
+/* .popup:target {
+  opacity: 1;
+  visibility: visible;
+} */
+/* .popup:target .popup__content {
+  transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -moz-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -ms-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -webkit-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  -o-transform: perspective(600px) translate(0, 0) rotateX(0deg);
+  opacity: 1;
+} */
 .popup__area {
   width: 100%;
   height: 100%;
@@ -146,6 +163,26 @@ p {
   max-width: 800px;
   padding: 30px;
   position: relative;
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+  -webkit-transition: all 0.8s ease 0s;
+  -moz-transition: all 0.8s ease 0s;
+  -ms-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+  -moz-transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+  -ms-transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+  -webkit-transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+  -o-transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+}
+
+.popup__content_image {
+  padding: 0;
+}
+
+.popup__image img {
+  max-width: 100%;
+  vertical-align: top;
 }
 .popup_close {
   position: absolute;
@@ -158,6 +195,4 @@ p {
 .popup__title {
   font-size: 40px;
   margin: 0px 0px 1em 0px;
-}
-.popup__text {
 }
